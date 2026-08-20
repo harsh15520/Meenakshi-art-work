@@ -1,0 +1,10 @@
+# Five Faces We Come From — Video Overview Prompt
+
+**Format:** Cinematic (option 1) · **Language:** English · **Length:** Standard
+**Sources to feed NotebookLM:**
+- `notebook-sources/video-overview/sources/painting-family-keepsakes-graphite.md` (primary)
+- `notebook-sources/painting/family-keepsakes-graphite/family-keepsakes-graphite-curator-report.md` (story backup)
+
+## What should the video focus on?
+
+Create an immersive, cinematic walkthrough of the commissioned family set **"Five Faces We Come From"** (graphite, 12 × 16 in, a set of five, for a home hallway). Open with the idea that some commissions are a single likeness and this one was five — the parents, the in-laws, and the grandmother who raised them all, drawn so a hallway could hold the people a family comes from. Weave in the client's own words, verbatim, about passing them every morning and remembering who she comes from, and the testimonial naming the five. Explain the central problem — five photographs from different decades with lighting and quality all over the place, risking five portraits that look like five different artists, so they had to read as one family, one wall. Spotlight the two decisions that held the set together: the Diwali photographs chosen because everyone looked happiest and most themselves (formal studio shots rejected as too stiff, reading as ID photos), and the soft living-room light — soft graphite as one material, bare-paper cool highlights, a single warm mat board tying the five faces into one wall. Compress the six-week build into a time-lapse anchored on the notebook beats: Day 2 draw the grandmother first as the anchor, Day 9 keep every face soft like the living-room light. Make the shared hand-pressure range the visual star — show all five drawn with the same pressure so they read as one set from across the hall — and note the grandmother's precedence, drawn first and centred, the quiet hierarchy of the wall. End on the living hallway — hung at eye level, visitors naming the faces, the grandmother's portrait asked about first — with the studio's "story it carries never does" line. Keep it tender and unhurried.

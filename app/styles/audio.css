@@ -1,0 +1,32 @@
+﻿/* ============================================================
+   audio.css — audio players (Hero, Academy Doubt Buster, Marquee)
+   Extracted from app/globals.css. Loaded globally via app/layout.tsx.
+   ============================================================
+
+/* ===== Hero Audio Player ===== */
+.hero-audio-player{display:inline-flex;align-items:center;gap:8px;padding:6px 8px 6px 6px;border:1px solid var(--line);border-radius:999px;background:rgba(255,253,249,.82);backdrop-filter:blur(8px);transition:border-color .25s ease,box-shadow .25s ease}.hero-audio-player:hover{border-color:var(--gold);box-shadow:0 0 0 3px rgba(182,120,62,.08)}.hero-audio-toggle{display:inline-flex;align-items:center;gap:8px;padding:8px 14px;border:0;border-radius:999px;background:var(--wine);color:#fff;font-size:10px;letter-spacing:.14em;text-transform:uppercase;cursor:pointer;transition:background .25s ease}.hero-audio-toggle:hover{background:#392724}.hero-audio-toggle[aria-pressed="true"]{background:var(--gold)}.hero-audio-icon{display:inline-flex;align-items:center;justify-content:center;width:14px;height:14px}.hero-audio-eq{display:inline-flex;align-items:flex-end;gap:2px;height:12px}.hero-audio-eq i{display:block;width:2px;background:currentColor;border-radius:1px;animation:hero-eq-bounce 1s ease-in-out infinite}.hero-audio-eq i:nth-child(1){height:6px;animation-delay:0s}.hero-audio-eq i:nth-child(2){height:11px;animation-delay:.15s}.hero-audio-eq i:nth-child(3){height:8px;animation-delay:.3s}@keyframes hero-eq-bounce{0%,100%{transform:scaleY(.5)}50%{transform:scaleY(1)}}.hero-audio-langs{display:inline-flex;align-items:center;gap:2px}.hero-audio-lang{display:inline-flex;align-items:center;justify-content:center;min-width:30px;height:26px;padding:0 6px;border:0;border-radius:999px;background:transparent;color:var(--ink);font-size:10px;font-weight:600;letter-spacing:.04em;cursor:pointer;transition:background .2s ease,color .2s ease}.hero-audio-lang:hover{background:rgba(182,120,62,.1);color:var(--wine)}.hero-audio-lang.is-active{background:var(--wine);color:#fff}@media(max-width:620px){.hero-audio-player{width:100%;justify-content:space-between}}
+
+/* ===== Phase Audio Player (Curriculum per-phase pages) ===== */
+.phase-audio-wrap{display:flex;flex-direction:column;gap:6px;align-items:flex-start;margin-top:18px}
+.phase-audio-badge{font-size:9px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);padding-left:6px}
+.curriculum-phase-audio{margin-top:8px}
+@media(max-width:620px){.phase-audio-wrap{width:100%}.phase-audio-wrap .hero-audio-player{width:100%;justify-content:space-between}}
+
+/* ===== Academy Doubt Buster Audio Player ===== */
+.academy-audio-wrap{display:flex;flex-direction:column;gap:6px;align-items:flex-end}.academy-audio-badge{font-size:9px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);white-space:nowrap;padding-right:6px}.academy-audio-player{position:relative}.academy-audio-voices{display:inline-flex;align-items:center;padding-left:8px}.academy-audio-voice{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:50%;font-size:12px;line-height:1;transition:transform .3s ease;background:var(--paper);border:1px solid var(--line)}.academy-audio-voice--parent{animation:academy-voice-pulse-parent 3s ease-in-out infinite}.academy-audio-voice--instructor{margin-left:-6px;animation:academy-voice-pulse-instructor 3s ease-in-out infinite}.academy-audio-player:has(.hero-audio-toggle[aria-pressed="true"]) .academy-audio-voice--parent{transform:scale(1.15)}.academy-audio-player:has(.hero-audio-toggle[aria-pressed="true"]) .academy-audio-voice--instructor{transform:scale(1.15)}@keyframes academy-voice-pulse-parent{0%,55%{transform:scale(1)}60%,75%{transform:scale(1.2)}80%,100%{transform:scale(1)}}@keyframes academy-voice-pulse-instructor{0%,25%{transform:scale(1)}30%,45%{transform:scale(1.2)}50%,100%{transform:scale(1)}}@media(max-width:620px){.academy-audio-wrap{align-items:flex-start;width:100%}.academy-audio-badge{padding-left:6px}}
+
+/* ===== Marquee Audio Player (Made in Class) ===== */
+.marquee-audio-wrap{display:flex;justify-content:flex-end;padding:0 8% 10px}
+.marquee-audio-toggle{display:inline-flex;align-items:center;gap:8px;padding:8px 14px;border:1px solid var(--line);border-radius:999px;background:rgba(255,253,249,.82);backdrop-filter:blur(8px);color:var(--ink);font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;transition:border-color .25s ease,box-shadow .25s ease,background .25s ease}
+.marquee-audio-toggle:hover{border-color:var(--gold);box-shadow:0 0 0 3px rgba(182,120,62,.08);background:rgba(248,242,233,.92)}
+.marquee-audio-toggle[aria-pressed="true"]{border-color:var(--gold);background:var(--wine);color:#fff}
+.marquee-audio-toggle--error{cursor:not-allowed;opacity:.6;border-color:var(--line);color:var(--muted)}
+.marquee-audio-icon{display:inline-flex;align-items:center;justify-content:center;width:14px;height:14px}
+.marquee-audio-eq{display:inline-flex;align-items:flex-end;gap:2px;height:12px}
+.marquee-audio-eq i{display:block;width:2px;background:currentColor;border-radius:1px;animation:marquee-eq-bounce 1s ease-in-out infinite}
+.marquee-audio-eq i:nth-child(1){height:6px;animation-delay:0s}
+.marquee-audio-eq i:nth-child(2){height:11px;animation-delay:.15s}
+.marquee-audio-eq i:nth-child(3){height:8px;animation-delay:.3s}
+@keyframes marquee-eq-bounce{0%,100%{transform:scaleY(.5)}50%{transform:scaleY(1)}}
+@media(max-width:620px){.marquee-audio-wrap{justify-content:flex-start;padding:0 20px 10px}}
+

@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="600" viewBox="0 0 600 600" role="img" aria-label="Studio moment coming soon">
+  <rect width="600" height="600" fill="#efe3d2"/>
+  <rect x="20" y="20" width="560" height="560" fill="none" stroke="#b6783e" stroke-width="2" stroke-dasharray="8 6"/>
+  <circle cx="300" cy="250" r="90" fill="#e7d3b8" stroke="#583a35" stroke-width="3"/>
+  <path d="M210 430 Q300 330 390 430" fill="none" stroke="#583a35" stroke-width="3"/>
+  <text x="300" y="500" text-anchor="middle" font-family="Georgia, serif" font-size="22" fill="#583a35" letter-spacing="2">STUDIO MOMENT</text>
+</svg>

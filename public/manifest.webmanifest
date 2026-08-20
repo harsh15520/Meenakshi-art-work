@@ -1,0 +1,17 @@
+{
+  "name": "Meenakshi Art Work",
+  "short_name": "Meenakshi Art",
+  "description": "Women-only fine art academy, original paintings and custom art commissions in Saharanpur since 2017.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f8f2e9",
+  "theme_color": "#583a35",
+  "icons": [
+    {
+      "src": "/aarna-full.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}

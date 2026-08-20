@@ -1,0 +1,202 @@
+// Prisma schema for the Meenakshi Art Work content layer.
+// SQLite is used at BUILD TIME ONLY: the seed script imports the hand-maintained
+// data/*.ts objects, enforces relational integrity (PK uniqueness + FK references),
+// normalizes M:N relations into junction tables, and the query facade in
+// lib/db/queries.ts reads from it during `next build` / ISR. No DB connection is
+// opened at request time.
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+// ─── People & Academy ────────────────────────────────────────────────────────
+
+model JournalPerson {
+  slug         String         @id
+  name         String
+  role         String // "student" | "client" | "prospective-client" | "family" | "other"
+  academySlug  String?        // FK -> ArtistProfile.slug (may be null)
+  isAnonymized Boolean        @default(false)
+  artistProfile ArtistProfile? @relation(fields: [academySlug], references: [slug])
+  mentions     EntryMention[]
+  comments     JournalComment[]
+
+  @@index([role])
+}
+
+model ArtistProfile {
+  slug              String       @id
+  name              String
+  joinedYear        Int
+  headline          String
+  bio               String?
+  isSample          Boolean      @default(false)
+  heroImage         String
+  featuredArtworkSlug String?
+  shareCode         String?
+  galleryWallImage  String?
+  teacherNoteImage  String?
+  certificateId     String?
+  certificateIssued String?
+  artworks          Artwork[]
+  journalPeople     JournalPerson[]
+
+  // "No published profile without consent" is enforced in prisma/seed.ts:
+  // a non-sample profile (isSample=false) surfaced via the locker must carry a
+  // shareCode, otherwise the seed warns. (Schema-level CHECK unsupported on this
+  // Prisma/SQLite build.)
+}
+
+model Artwork {
+  artworkSlug String
+  profileSlug String
+  title       String
+  image       String
+  displayImage String
+  medium      String
+  size        String
+  year        Int
+  description String?
+  story       String
+  exploredSkills String // JSON array string
+  macroShots  String // JSON array string
+  roomMockups String // JSON array string
+  behindTheCanvas String? // JSON array string
+  profile     ArtistProfile @relation(fields: [profileSlug], references: [slug], onDelete: Cascade)
+
+  @@id([artworkSlug, profileSlug])
+  @@index([profileSlug])
+}
+
+// ─── Journal (entries, threads, M:N junctions) ───────────────────────────────
+
+model JournalThread {
+  slug          String         @id
+  title         String
+  workType      String
+  status        String // "active" | "completed"
+  statusNote    String
+  statusUpdatedOn String
+  startedOn     String
+  completedOn   String?
+  entries       JournalEntry[]
+}
+
+model JournalEntry {
+  slug          String       @id
+  title         String
+  category      String
+  format        String?
+  excerpt       String
+  body          String // JSON array string (string[])
+  publishedOn   String
+  readTimeMinutes Int
+  status        String // "active" | "completed" | "evergreen"
+  threadSlug    String?
+  stream        String // "commission" | "academy" | "gallery" | "studio"
+  stage         String?
+  emoji         String?
+  stripLabel    String?
+  coverImage    String?
+  thread        JournalThread? @relation(fields: [threadSlug], references: [slug])
+  mentions      EntryMention[]
+  tags          EntryTag[]
+  comments      JournalComment[]
+  relatedPaintingStories PaintingStory[]
+
+  @@index([publishedOn])
+  @@index([stream, status])
+  @@index([category])
+  @@index([threadSlug])
+  @@index([status])
+}
+
+// Normalized M:N: replaces the embedded `mentionedPeople[]` array so we can query
+// "all entries mentioning person X" via an indexed join instead of a full scan.
+model EntryMention {
+  entrySlug String
+  personSlug String
+  entry     JournalEntry  @relation(fields: [entrySlug], references: [slug], onDelete: Cascade)
+  person    JournalPerson @relation(fields: [personSlug], references: [slug], onDelete: Cascade)
+
+  @@id([entrySlug, personSlug])
+  @@index([personSlug])
+}
+
+// Normalized 1:N tags (was embedded `tags[]`): enables GROUP BY / indexed tag filter.
+model EntryTag {
+  entrySlug String
+  tag       String
+  entry     JournalEntry @relation(fields: [entrySlug], references: [slug], onDelete: Cascade)
+
+  @@id([entrySlug, tag])
+  @@index([tag])
+}
+
+model JournalComment {
+  id        String
+  entrySlug String
+  personSlug String
+  text      String
+  postedOn  String
+  roleTag   String?
+  replyBy   String?
+  entry     JournalEntry  @relation(fields: [entrySlug], references: [slug], onDelete: Cascade)
+  person    JournalPerson @relation(fields: [personSlug], references: [slug], onDelete: Cascade)
+
+  @@id([id])
+  @@index([entrySlug])
+  @@index([postedOn])
+}
+
+// ─── Commissions, gallery paintings, painting stories ────────────────────────
+
+// Commissions + gallery paintings: indexed key columns for the live-strip queries,
+// plus a `data` JSON blob carrying the full source object (tolerant of shape drift).
+model Commission {
+  id           String  @id
+  title        String
+  status       String // "in-studio" | "delivered" | "available"
+  stage        String?
+  addedOn      String
+  partition    String // "in-studio" | "client-story" | "recently-delivered"
+  data         String // full source object (JSON)
+  curatorsChoice Boolean @default(false)
+
+  @@index([status])
+  @@index([partition])
+}
+
+model GalleryPainting {
+  id          String  @id
+  title       String
+  status      String // "available" | "in-studio"
+  stage       String?
+  addedOn     String
+  partition   String // "recently-added" | "in-studio" | "monthly-favourite"
+  journalSlug String?
+  data        String // full source object (JSON)
+  curatorsChoice Boolean @default(false)
+
+  @@index([status])
+  @@index([partition])
+}
+
+// Painting stories: stored as JSON (rich nested module graph) plus indexed columns
+// for the queries the site actually runs.
+model PaintingStory {
+  slug              String  @id
+  contextualTitle   String
+  storyContext      String // "commission" | "gallery" | "student"
+  relatedJournalSlug String?
+  data              String // full PaintingStory object (JSON)
+  entry             JournalEntry? @relation(fields: [relatedJournalSlug], references: [slug])
+
+  @@index([storyContext])
+  @@index([relatedJournalSlug])
+}

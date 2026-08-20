@@ -1,0 +1,120 @@
+/* Site chrome */
+
+.top-note{height:29px;background:#5a3b36;color:#fff7ee;display:flex;justify-content:center;align-items:center;font-size:10px;letter-spacing:.11em;text-transform:uppercase}
+
+.top-note span{margin:0 10px;color:#d69b62}
+
+.header-shell{height:79px;padding:0 clamp(20px,5vw,72px);display:grid;grid-template-columns:1fr auto 1fr;align-items:center;border-bottom:1px solid var(--line);background:rgba(255,253,249,.94);backdrop-filter:blur(12px);position:sticky;top:0;z-index:50}
+
+.brand{display:flex;align-items:center;gap:11px;justify-self:start}
+
+.brand-mark{width:38px;height:38px;border:1px solid var(--wine);border-radius:50%;display:grid;place-items:center;font:600 24px var(--font-display);color:var(--wine)}
+
+.brand b{display:block;font:600 22px/1 var(--font-display)}
+
+.brand small{display:block;font-size:8px;letter-spacing:.24em;margin-top:5px}
+
+.desktop-nav{display:flex;gap:34px}
+
+.desktop-nav a{font-size:12px;position:relative}
+
+.desktop-nav a:after{content:"";position:absolute;left:0;right:100%;bottom:-8px;height:1px;background:var(--wine);transition:.25s}
+
+.desktop-nav a:hover:after{right:0}
+
+.header-actions{justify-self:end;display:flex;align-items:center;gap:16px}
+
+.header-cta{border-bottom:1px solid;font-size:12px;padding:8px 0}
+
+.header-cta span,.button-primary span,.button-light span{margin-left:9px}
+
+.ambient-toggle{display:inline-flex;align-items:center;gap:8px;padding:8px 12px;border:1px solid var(--line);border-radius:999px;background:rgba(255,253,249,.82);color:var(--ink);cursor:pointer;transition:.25s ease;font-size:10px;letter-spacing:.16em;text-transform:uppercase}
+
+.ambient-toggle:hover{border-color:var(--wine);color:var(--wine);background:rgba(248,242,233,.96)}
+
+.ambient-toggle[aria-pressed="true"]{border-color:var(--gold);color:var(--wine);box-shadow:inset 0 0 0 1px rgba(182,120,62,.18)}
+
+.ambient-dot{width:8px;height:8px;border-radius:50%;background:currentColor;box-shadow:0 0 0 0 rgba(182,120,62,.35);transition:transform .25s,box-shadow .25s}
+
+.ambient-toggle[aria-pressed="true"] .ambient-dot{transform:scale(1.15);box-shadow:0 0 0 4px rgba(182,120,62,.12)}
+
+.ambient-label{line-height:1}
+
+.menu-toggle{display:none;border:0;background:none}
+
+.mobile-menu{position:fixed;z-index:49;top:79px;left:0;right:0;background:var(--paper);padding:15px 25px 30px;transform:translateY(-140%);transition:.35s;border-bottom:1px solid var(--line);pointer-events:none}
+
+.mobile-menu.open{transform:none;pointer-events:auto}
+
+.mobile-menu a{display:flex;justify-content:space-between;padding:15px 0;border-bottom:1px solid var(--line);font:500 25px var(--font-display)}
+
+.button-primary,.button-light,.button-outline{display:inline-flex;align-items:center;justify-content:center;min-height:49px;padding:0 23px;background:var(--wine);color:white;font-size:11px;letter-spacing:.06em;text-transform:uppercase;border:1px solid var(--wine);transition:.25s}
+
+.button-primary:hover{background:#392724}
+
+.button-text{font-size:12px;border-bottom:1px solid;padding:10px 0}
+
+.button-text span{margin-left:9px}
+
+.trust-strip{min-height:72px;background:#2e2826;color:white;display:flex;align-items:center;justify-content:center;gap:44px;font:500 10px var(--font-body);letter-spacing:.16em;text-transform:uppercase}
+
+.trust-strip i{width:3px;height:3px;border-radius:50%;background:var(--season-accent)}
+
+.button-outline{background:transparent;color:var(--ink);border-color:var(--ink)}
+
+.site-footer{background:#292321;color:#f8f1e7;padding:85px max(5vw,calc((100vw - 1240px)/2)) 24px}
+
+.footer-lead{display:flex;align-items:end;justify-content:space-between;padding-bottom:65px;border-bottom:1px solid rgba(255,255,255,.16)}
+
+.footer-social{padding:65px 0;border-bottom:1px solid rgba(255,255,255,.16)}
+
+.footer-social>.eyebrow{color:#d6a16e;margin-bottom:28px}
+
+.footer-social-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+
+.social-card{display:flex;gap:15px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);border-radius:12px;overflow:hidden;transition:.25s ease;text-decoration:none;color:inherit}
+
+.social-card:hover{background:rgba(255,255,255,.12);border-color:rgba(255,255,255,.24)}
+
+.social-card-image{width:140px;height:140px;flex-shrink:0;background-size:cover;background-position:center}
+
+.social-card-body{display:flex;flex-direction:column;justify-content:center;padding:20px;flex:1}
+
+.social-icon{width:28px;height:28px;color:#d6a16e;margin-bottom:8px}
+
+.social-card-body h4{font:500 16px var(--font-display);margin:0 0 6px;color:white}
+
+.social-card-body p{font-size:11px;margin:0;color:#bbb0aa;line-height:1.5}
+
+.footer-lead>p{font-size:9px;letter-spacing:.2em;align-self:start}
+
+.footer-lead h2{font:500 clamp(49px,6vw,85px)/.9 var(--font-display);margin:0}
+
+.footer-lead h2 em{font-weight:400;color:#ce9863}
+
+.footer-lead>a{border-bottom:1px solid;padding:10px 0;font-size:11px;text-transform:uppercase;letter-spacing:.1em}
+
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:50px;padding:55px 0}
+
+.footer-grid b{font-size:9px;letter-spacing:.17em;color:#d6a16e;text-transform:uppercase}
+
+.footer-grid p,.footer-grid a{display:block;color:#bbb0aa;font-size:11px;line-height:1.8;margin:13px 0}
+
+.footer-bottom{border-top:1px solid rgba(255,255,255,.13);padding-top:20px;display:flex;justify-content:space-between;color:#887d77;font-size:9px}
+
+.wa-float{position:fixed;right:22px;bottom:22px;z-index:60;height:49px;background:#1da851;color:white;border-radius:30px;padding:0 19px;display:flex;gap:9px;align-items:center;box-shadow:0 8px 28px rgba(0,0,0,.22);font-size:11px;font-weight:700}
+
+.wa-float svg{width:20px;fill:white}
+
+.student-review-badge{position:fixed;left:22px;bottom:22px;z-index:55;background:var(--wine);color:white;border-radius:16px;padding:12px 16px;display:flex;align-items:center;gap:10px;box-shadow:0 8px 28px rgba(0,0,0,.22);text-decoration:none;max-width:240px}
+
+.student-review-badge-seal{width:34px;height:34px;flex-shrink:0}
+
+.student-review-badge-text{display:flex;flex-direction:column;gap:2px}
+
+.student-review-badge-label{font-size:12px;font-weight:700;letter-spacing:.02em;font-style:normal}
+
+.student-review-badge-sub{font-size:10px;line-height:1.3;color:rgba(255,255,255,.82);font-style:normal}
+
+.button-light{background:white;color:var(--wine);border-color:white}
+

@@ -1,0 +1,39 @@
+/* ============================================================
+   primitives.css — global interaction primitives
+   Extracted from app/globals.css. Loaded globally via app/layout.tsx
+   (after globals.css) so these universal modifiers apply on top of
+   the base component rules defined there.
+
+   These rules add press/pending feedback to every interactive element.
+   They reference feature classes (e.g. .gallery-tile, .cta-button) whose
+   base definitions live in app/globals.css / future feature files; those
+   load before this file, so the :active/:busy states layer on correctly.
+   ============================================================ */
+
+/* Global click feedback: every button/submit/anchor shows an immediate press
+   reaction so a click never feels "stuck" while a navigation or load happens.
+   Pure visual — no layout shift. */
+button, .cta-button, .artist-btn, .button-outline, .button-primary, .button-text,
+a.artist-btn, a.cta-button, .service-card, .gallery-tile, .journal-entry-card-link,
+.journal-preview-card, .social-card, .guestbook-link, .map-link, .line-link,
+.gallery-live-card, .wa-float, .student-review-badge, .guestbook-cta-link,
+.inquiry-link, .student-locker__unlock, .student-locker__reset, .interior-curriculum-cta,
+.journal-view-all-button, .journal-search-button, .exhibition-carousel__arrow,
+.exhibition-tourbar__mode, .exhibition-inspect__close, .collapsible-strip__head,
+.studio-moments__tile a, .meet-students-wall__hotspot {
+  transition: transform .12s ease, filter .12s ease, opacity .12s ease, box-shadow .12s ease;
+}
+button:active:not(:disabled), .cta-button:active, .artist-btn:active, a.artist-btn:active,
+a.cta-button:active, .student-locker__unlock:active, .student-locker__reset:active,
+.journal-search-button:active, .journal-view-all-button:active, .exhibition-carousel__arrow:active,
+.collapsible-strip__head:active, .service-card:active, .gallery-tile:active,
+.journal-preview-card:active, .social-card:active, .guestbook-link:active, .map-link:active,
+.line-link:active, .gallery-live-card:active, .wa-float:active, .student-review-badge:active,
+.guestbook-cta-link:active, .inquiry-link:active, .interior-curriculum-cta:active,
+.meet-students-wall__hotspot:active, .exhibition-tourbar__mode:active, .exhibition-inspect__close:active {
+  transform: scale(.96);
+  filter: brightness(.94);
+}
+/* Pending state for action buttons that navigate/submit with a delay. */
+.is-busy { opacity:.6; pointer-events:none; cursor:progress; filter:saturate(.85); }
+.is-busy span:last-child::after { content:"…"; }

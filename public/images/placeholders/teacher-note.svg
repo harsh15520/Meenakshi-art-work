@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="672" viewBox="0 0 900 672" role="img" aria-label="Note from Ma'am coming soon">
+  <rect width="900" height="672" fill="#fbf5ea"/>
+  <rect x="30" y="30" width="840" height="612" fill="none" stroke="#b6783e" stroke-width="3" stroke-dasharray="12 9"/>
+  <circle cx="200" cy="200" r="80" fill="#e7d3b8" stroke="#583a35" stroke-width="3"/>
+  <path d="M140 360 Q200 300 260 360" fill="none" stroke="#583a35" stroke-width="3"/>
+  <g stroke="#c9b9a6" stroke-width="3" stroke-linecap="round">
+    <path d="M360 200 H820"/>
+    <path d="M360 250 H820"/>
+    <path d="M360 300 H760"/>
+    <path d="M360 420 H700"/>
+    <path d="M360 470 H820"/>
+    <path d="M360 520 H640"/>
+  </g>
+  <text x="450" y="620" text-anchor="middle" font-family="Georgia, serif" font-size="20" fill="#976238" letter-spacing="3">A NOTE FROM MA'AM · COMING SOON</text>
+</svg>

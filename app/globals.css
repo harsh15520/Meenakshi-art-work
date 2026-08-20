@@ -1,0 +1,28 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root{--ink:#292321;--wine:#583a35;--gold:#b6783e;--ivory:#f8f2e9;--paper:#fffdf9;--blush:#eadbd0;--line:rgba(41,35,33,.16);--season-accent:var(--gold);--season-tint:transparent;--season-border:var(--line)}
+
+/* --font-hand-raw/--font-serif-narrative-raw only exist on <body> (set by next/font's
+   variable classes there), so the --font-hand/--font-signature alias must be declared
+   on body too — declaring it on :root locks it in as invalid before the raw variable exists. */
+body{--font-hand:var(--font-hand-raw);--font-signature:var(--font-hand-raw)}
+
+[data-season="spring"]{--season-accent:#7a9e50;--season-tint:rgba(134,192,88,.06);--season-border:rgba(122,158,80,.2)}
+
+[data-season="summer"]{--season-accent:#c07840;--season-tint:rgba(210,140,80,.07);--season-border:rgba(192,120,64,.2)}
+
+[data-season="autumn"]{--season-accent:#a0461a;--season-tint:rgba(180,80,30,.07);--season-border:rgba(160,70,26,.2)}
+
+[data-season="winter"]{--season-accent:#5a6ea0;--season-tint:rgba(90,110,170,.05);--season-border:rgba(90,110,160,.18)}
+
+*{box-sizing:border-box}
+
+html{scroll-behavior:smooth;overflow-x:hidden}
+
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--font-body),sans-serif;overflow-x:hidden}
+
+a{text-decoration:none;color:inherit}
+
+button{font:inherit}

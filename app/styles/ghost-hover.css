@@ -1,0 +1,254 @@
+/* ============================================================
+   ghost-hover.css — Ghost Hover utility
+   Briefly plays an element's hover state when it first enters
+   the viewport, then returns to rest. Once per session per element.
+   ============================================================ */
+
+/* Button primary ghost hover — mimics .button-primary:hover (layout.css) */
+@keyframes ghost-hover-primary {
+  0% { background: var(--wine); }
+  50% { background: #392724; }
+  100% { background: var(--wine); }
+}
+
+.button-primary.ghost-hover {
+  animation: ghost-hover-primary 1.6s ease-in-out;
+}
+
+.button-primary.ghost-hover:hover {
+  animation: none;
+}
+
+/* Button outline ghost hover — mimics .button-outline:hover (layout.css) */
+@keyframes ghost-hover-outline {
+  0% { background: transparent; color: var(--ink); }
+  50% { background: var(--ink); color: white; }
+  100% { background: transparent; color: var(--ink); }
+}
+
+.button-outline.ghost-hover {
+  animation: ghost-hover-outline 1.6s ease-in-out;
+}
+
+.button-outline.ghost-hover:hover {
+  animation: none;
+}
+
+/* Service card ghost hover — mimics .service-card a:hover (home.css) */
+@keyframes ghost-hover-service {
+  0% { transform: translateY(0); box-shadow: none; }
+  25% { transform: translateY(-6px); box-shadow: 0 20px 40px rgba(41,35,33,.16); }
+  75% { transform: translateY(-6px); box-shadow: 0 20px 40px rgba(41,35,33,.16); }
+  100% { transform: translateY(0); box-shadow: none; }
+}
+
+.service-card a.ghost-hover {
+  animation: ghost-hover-service 1.6s ease-in-out;
+}
+
+.service-card a.ghost-hover:hover {
+  animation: none;
+}
+
+/* Gallery tile ghost hover — mimics .gallery-tile:hover (home.css) */
+@keyframes ghost-hover-gallery {
+  0% { transform: scale(1); }
+  25% { transform: scale(1.06); }
+  75% { transform: scale(1.06); }
+  100% { transform: scale(1); }
+}
+
+.gallery-tile.ghost-hover {
+  animation: ghost-hover-gallery 1.6s ease-in-out;
+}
+
+.gallery-tile.ghost-hover:hover {
+  animation: none;
+}
+
+/* Social card ghost hover — mimics .social-card:hover (layout.css) */
+@keyframes ghost-hover-social {
+  0% { background: rgba(255,255,255,.08); border-color: rgba(255,255,255,.12); }
+  50% { background: rgba(255,255,255,.12); border-color: rgba(255,255,255,.24); }
+  100% { background: rgba(255,255,255,.08); border-color: rgba(255,255,255,.12); }
+}
+
+.social-card.ghost-hover {
+  animation: ghost-hover-social 1.6s ease-in-out;
+}
+
+.social-card.ghost-hover:hover {
+  animation: none;
+}
+
+/* Journal entry card ghost hover — mimics .journal-entry-card:hover (journal.css) */
+@keyframes ghost-hover-journal {
+  0% { border-color: var(--line); transform: translateY(0); }
+  50% { border-color: var(--gold); transform: translateY(-3px); }
+  100% { border-color: var(--line); transform: translateY(0); }
+}
+
+.journal-entry-card.ghost-hover {
+  animation: ghost-hover-journal 1.6s ease-in-out;
+}
+
+.journal-entry-card.ghost-hover:hover {
+  animation: none;
+}
+
+/* Artist artwork card ghost hover — mimics .artist-artwork-card:hover (artist.css) */
+@keyframes ghost-hover-artwork {
+  0% { transform: translateY(0); box-shadow: 0 2px 6px rgba(41,35,33,0); }
+  25% { transform: translateY(-4px); box-shadow: 0 16px 32px rgba(41,35,33,.16); }
+  75% { transform: translateY(-4px); box-shadow: 0 16px 32px rgba(41,35,33,.16); }
+  100% { transform: translateY(0); box-shadow: 0 2px 6px rgba(41,35,33,0); }
+}
+
+.artist-artwork-card.ghost-hover {
+  animation: ghost-hover-artwork 1.6s ease-in-out;
+}
+
+.artist-artwork-card.ghost-hover:hover {
+  animation: none;
+}
+
+/* Desktop nav link ghost hover — mimics .desktop-nav a:hover (layout.css) */
+@keyframes ghost-hover-nav {
+  0% { color: inherit; }
+  50% { color: var(--gold); }
+  100% { color: inherit; }
+}
+
+.desktop-nav a.ghost-hover {
+  animation: ghost-hover-nav 1.6s ease-in-out;
+}
+
+.desktop-nav a.ghost-hover:hover {
+  animation: none;
+}
+
+/* Timeline icon ghost hover — mimics .timeline-icon:hover (artist.css) */
+@keyframes ghost-hover-timeline-icon {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 0 4px var(--paper), 0 0 0 5px rgba(182,120,62,.35), 0 4px 14px rgba(41,35,33,.1);
+  }
+  50% {
+    transform: scale(1.06);
+    box-shadow: 0 0 0 4px var(--paper), 0 0 0 5px rgba(182,120,62,.55), 0 6px 18px rgba(41,35,33,.18);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 4px var(--paper), 0 0 0 5px rgba(182,120,62,.35), 0 4px 14px rgba(41,35,33,.1);
+  }
+}
+
+@keyframes ghost-hover-timeline-glow {
+  0% { opacity: .25; filter: blur(6px); }
+  50% { opacity: .4; filter: blur(8px); }
+  100% { opacity: .25; filter: blur(6px); }
+}
+
+.timeline-icon.ghost-hover {
+  animation: ghost-hover-timeline-icon 0.7s ease-in-out infinite;
+}
+
+.timeline-icon.ghost-hover:before {
+  animation: ghost-hover-timeline-glow 0.7s ease-in-out infinite;
+}
+
+.timeline-icon.ghost-hover .door-leaf-left {
+  animation: door-swing-left .7s ease-in-out infinite;
+  transform-origin: 10px 28px;
+}
+
+.timeline-icon.ghost-hover .door-leaf-right {
+  animation: door-swing-right .7s ease-in-out infinite;
+  transform-origin: 22px 28px;
+}
+
+.timeline-icon.ghost-hover .quill-shaft {
+  stroke-dasharray: 20;
+  animation: quill-write .7s ease-in-out infinite;
+}
+
+.timeline-icon.ghost-hover .wreath-leaves {
+  animation: wreath-bloom .7s ease-in-out infinite;
+  transform-origin: 16px 16px;
+}
+
+.timeline-icon.ghost-hover .compass-needle {
+  animation: compass-spin .7s linear infinite;
+  transform-origin: 16px 16px;
+}
+
+.timeline-icon.ghost-hover .seal-mark {
+  animation: seal-press .7s ease-in-out infinite;
+  transform-origin: 16px 16px;
+}
+
+.timeline-icon.ghost-hover .knot-line {
+  stroke-dasharray: 8 4;
+  animation: knot-flow .7s linear infinite;
+}
+
+.timeline-icon.ghost-hover:hover {
+  animation: none;
+}
+
+/* Journal "what brings you here" entry-point card ghost hover —
+   mimics .journal-entry-point-card:hover (journal.css) */
+@keyframes ghost-hover-entry-point {
+  0% { border-color: var(--line); transform: translateY(0); box-shadow: none; }
+  25% { border-color: var(--gold); transform: translateY(-3px); box-shadow: 0 12px 28px rgba(41,35,33,.1); }
+  75% { border-color: var(--gold); transform: translateY(-3px); box-shadow: 0 12px 28px rgba(41,35,33,.1); }
+  100% { border-color: var(--line); transform: translateY(0); box-shadow: none; }
+}
+
+.journal-entry-point-card.ghost-hover {
+  animation: ghost-hover-entry-point 1.6s ease-in-out;
+}
+
+.journal-entry-point-card.ghost-hover:hover {
+  animation: none;
+}
+
+/* Journal "trending this week" link ghost hover —
+   mimics .journal-sidebar-trending-link:hover (journal.css) */
+@keyframes ghost-hover-trending {
+  0% { color: inherit; }
+  50% { color: var(--wine); }
+  100% { color: inherit; }
+}
+
+.journal-sidebar-trending-link.ghost-hover .journal-sidebar-trending-title {
+  animation: ghost-hover-trending 1.6s ease-in-out;
+}
+
+.journal-sidebar-trending-link.ghost-hover:hover .journal-sidebar-trending-title {
+  animation: none;
+}
+
+/* Student gallery-wall CTA overlay ghost hover —
+   gentle pulse (no real :hover style exists for this element). */
+@keyframes ghost-hover-gallery-wall-cta {
+  0% { transform: translate(-50%, -50%) scale(1); box-shadow: 0 0 0 0 rgba(182,120,62,.0); }
+  25% { transform: translate(-50%, -50%) scale(1.12); box-shadow: 0 0 0 6px rgba(182,120,62,.18); }
+  75% { transform: translate(-50%, -50%) scale(1.12); box-shadow: 0 0 0 6px rgba(182,120,62,.18); }
+  100% { transform: translate(-50%, -50%) scale(1); box-shadow: 0 0 0 0 rgba(182,120,62,.0); }
+}
+
+.gallery-wall-cta-overlay.ghost-hover {
+  animation: ghost-hover-gallery-wall-cta 1.6s ease-in-out;
+}
+
+.gallery-wall-cta-overlay.ghost-hover:hover {
+  animation: none;
+}
+
+/* Reduced motion — disable all ghost hover */
+@media (prefers-reduced-motion: reduce) {
+  .ghost-hover {
+    animation: none !important;
+  }
+}
