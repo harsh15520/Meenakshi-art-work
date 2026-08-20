@@ -153,6 +153,22 @@ export default function PaintingHeroVideoBackground({
   // Backdrop is decorative and always muted — no jsapi/control needed, avoids ever accidentally unmuting a second copy of the same audio.
   const backdropSrc = `https://www.youtube-nocookie.com/embed/${id}?rel=0&autoplay=1&mute=1&loop=1&playlist=${id}&controls=0&showinfo=0&modestbranding=1&playsinline=1`;
 
+  if (!playing) {
+    return (
+      <div className="painting-hero-video-wrap" ref={wrapRef}>
+        <Image src={posterImage} alt={posterAlt} fill priority sizes="100vw" className="painting-hero-img" />
+        <button
+          type="button"
+          className="painting-hero-video-play"
+          onClick={() => setPlaying(true)}
+          aria-label="Play background video"
+        >
+          <span className="painting-hero-video-play-icon">{PLAY_ICON}</span>
+        </button>
+      </div>
+    );
+  }
+
   return (
     <div className="painting-hero-video-wrap" ref={wrapRef}>
       {letterbox && backdropSize && (

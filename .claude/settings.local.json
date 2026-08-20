@@ -203,7 +203,8 @@
       "Bash(agent-browser skills *)",
       "Bash(agent-browser snapshot *)",
       "Bash(tasklist //FI \"IMAGENAME eq node.exe\")",
-      "Bash(grep -n '  {$' \"c:/Users/apoor/meenakshi-art-work1/data/artists.ts\")"
+      "Bash(grep -n '  {$' \"c:/Users/apoor/meenakshi-art-work1/data/artists.ts\")",
+      "Bash(agent-browser --session vidcheck snapshot -i)"
     ],
     "additionalDirectories": [
       "\\tmp",

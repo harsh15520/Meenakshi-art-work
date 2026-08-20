@@ -13,7 +13,7 @@ export default function PaintingHero({ image, contextualTitle, narrative, video 
   return (
     <section className={`painting-hero${video ? " painting-hero--video" : ""}`}>
       {video ? (
-        <PaintingHeroVideoBackground youtubeId={video.youtubeId} />
+        <PaintingHeroVideoBackground youtubeId={video.youtubeId} posterImage={image} posterAlt={contextualTitle} />
       ) : (
         <div className="painting-hero-image">
           <Image
