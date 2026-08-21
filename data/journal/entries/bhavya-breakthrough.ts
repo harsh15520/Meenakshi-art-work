@@ -20,7 +20,7 @@ const entry: JournalEntry = {
     coverImage: "/images/academy/muskan/oil-painting-102.webp",
     stream: "academy",
     emoji: "💡",
-    stripLabel: "Bhavya's breakthrough\nShadow and perspective click",
+    stripLabel: "Bhavya's breakthrough\nShadow and perspective",
   };
 
 export default entry;

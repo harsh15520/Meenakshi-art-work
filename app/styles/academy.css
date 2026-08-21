@@ -113,7 +113,7 @@ a.studio-today__item-link{cursor:pointer}
 .studio-today__label{background:#2e2826;display:flex;align-items:center;gap:9px;padding:8px max(5vw,calc((100vw - 1260px)/2));border-top:1px solid rgba(255,255,255,.06)}
 .studio-today__heading{font:700 9px/1 var(--font-body);letter-spacing:.22em;text-transform:uppercase;color:#c79564}
 .studio-today__dot{width:6px;height:6px;border-radius:50%;background:#5cb85c;box-shadow:0 0 0 3px rgba(92,184,92,.18);flex-shrink:0}
-.studio-today__updated{font-size:9px;color:rgba(255,255,255,.36);letter-spacing:.04em}
+.studio-today__updated{font-size:9px;color:rgba(255,255,255,.65);letter-spacing:.04em}
 .studio-today__track{background:var(--ivory);border-bottom:1px solid var(--line);display:flex;align-items:center;padding:0 max(5vw,calc((100vw - 1260px)/2));overflow-x:auto;scrollbar-width:none;-ms-overflow-style:none}
 .studio-today__track::-webkit-scrollbar{display:none}
 .studio-today__item{display:flex;align-items:center;flex-shrink:0}
@@ -123,7 +123,7 @@ a.studio-today__item-link:hover .studio-today__line{color:var(--wine)}
 .studio-today__emoji{font-size:22px;line-height:1;flex-shrink:0;font-family:"Apple Color Emoji","Segoe UI Emoji","Noto Color Emoji",sans-serif}
 .studio-today__text{display:flex;flex-direction:column;gap:0}
 .studio-today__line{display:block;font:500 12px/1.35 var(--font-display);color:var(--ink);white-space:nowrap;transition:color .18s}
-.studio-today__time{display:block;font:400 10px/1 var(--font-body);letter-spacing:.06em;color:#a09690;margin-top:3px}
+.studio-today__time{display:block;font:400 10px/1 var(--font-body);letter-spacing:.06em;color:#6b6058;margin-top:3px}
 .studio-today__divider{width:4px;height:4px;border-radius:50%;background:rgba(41,35,33,.18);flex-shrink:0;margin:0 2px}
 @media(max-width:768px){.studio-today__label{padding:8px 18px}.studio-today__track{padding:0 18px}.studio-today__item-link{padding:12px 12px;gap:9px}.studio-today__emoji{font-size:19px}.studio-today__line{font-size:11px}}
 

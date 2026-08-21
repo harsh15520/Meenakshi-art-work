@@ -2,7 +2,7 @@
 
 .top-note{height:29px;background:#5a3b36;color:#fff7ee;display:flex;justify-content:center;align-items:center;font-size:10px;letter-spacing:.11em;text-transform:uppercase}
 
-.top-note span{margin:0 10px;color:#d69b62}
+.top-note span{margin:0 10px;color:#e8b483}
 
 .header-shell{height:79px;padding:0 clamp(20px,5vw,72px);display:grid;grid-template-columns:1fr auto 1fr;align-items:center;border-bottom:1px solid var(--line);background:rgba(255,253,249,.94);backdrop-filter:blur(12px);position:sticky;top:0;z-index:50}
 
@@ -76,13 +76,13 @@
 
 .social-card:hover{background:rgba(255,255,255,.12);border-color:rgba(255,255,255,.24)}
 
-.social-card-image{width:140px;height:140px;flex-shrink:0;background-size:cover;background-position:center}
+.social-card-image{position:relative;width:140px;height:140px;flex-shrink:0}
 
 .social-card-body{display:flex;flex-direction:column;justify-content:center;padding:20px;flex:1}
 
 .social-icon{width:28px;height:28px;color:#d6a16e;margin-bottom:8px}
 
-.social-card-body h4{font:500 16px var(--font-display);margin:0 0 6px;color:white}
+.social-card-body h3{font:500 16px var(--font-display);margin:0 0 6px;color:white}
 
 .social-card-body p{font-size:11px;margin:0;color:#bbb0aa;line-height:1.5}
 
@@ -100,9 +100,9 @@
 
 .footer-grid p,.footer-grid a{display:block;color:#bbb0aa;font-size:11px;line-height:1.8;margin:13px 0}
 
-.footer-bottom{border-top:1px solid rgba(255,255,255,.13);padding-top:20px;display:flex;justify-content:space-between;color:#887d77;font-size:9px}
+.footer-bottom{border-top:1px solid rgba(255,255,255,.13);padding-top:20px;display:flex;justify-content:space-between;color:#b3a8a2;font-size:9px}
 
-.wa-float{position:fixed;right:22px;bottom:22px;z-index:60;height:49px;background:#1da851;color:white;border-radius:30px;padding:0 19px;display:flex;gap:9px;align-items:center;box-shadow:0 8px 28px rgba(0,0,0,.22);font-size:11px;font-weight:700}
+.wa-float{position:fixed;right:22px;bottom:22px;z-index:60;height:49px;background:#15803a;color:white;border-radius:30px;padding:0 19px;display:flex;gap:9px;align-items:center;box-shadow:0 8px 28px rgba(0,0,0,.22);font-size:11px;font-weight:700}
 
 .wa-float svg{width:20px;fill:white}
 

@@ -17,7 +17,7 @@ export default function GuestbookNote({ name, quote, credibility, type, image, r
         transition={{ duration: 0.6, delay, type: "spring", damping: 12 }}
       >
         <div className="postcard-content">
-          {image && <div className="postcard-image"><Image src={image} alt="Artwork" fill style={{ objectFit: "cover" }} /></div>}
+          {image && <div className="postcard-image"><Image src={image} alt={`Painting from ${name}'s testimonial`} fill style={{ objectFit: "cover" }} /></div>}
           <p className="postcard-quote">{quote}</p>
           <div className="postcard-attribution">
             <p className="postcard-name">{name}</p>

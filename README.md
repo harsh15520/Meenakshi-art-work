@@ -2,6 +2,14 @@
 
 Premium, conversion-focused website for Meenakshi Oil Painting in Saharanpur.
 
+## License
+
+The **source code** of this project is licensed under the [Apache License 2.0](LICENSE) — you are free to use, modify, and distribute it.
+
+The **artwork, paintings, course content, photography, brand assets, and written copy** are **not** covered by that license and remain the exclusive property of Meenakshi Art Work (all rights reserved). They may not be reproduced, sold, or redistributed without written permission.
+
+If you build on this code, keep the code open under Apache-2.0, but do not reuse the site's creative content.
+
 ## Run locally
 
 ```bash

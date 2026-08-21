@@ -612,11 +612,3 @@
 .artwork-hero{padding:50px 20px 30px}
 }
 
-@media (prefers-reduced-motion:reduce){
-.interior-image-fg{transition:none!important}
-
-.interior-shine:before,.interior-flourish path,.student-locker__corner path{animation:none!important}
-
-.interior-flourish path,.student-locker__corner path{stroke-dashoffset:0}
-}
-

@@ -50,7 +50,7 @@ const nextConfig = {
           { key: 'Permissions-Policy', value: 'camera=(), microphone=(), geolocation=()' },
           {
             key: 'Content-Security-Policy',
-            value: "default-src 'self'; script-src 'self' 'unsafe-eval' 'unsafe-inline' https://www.googletagmanager.com https://*.sentry.io; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data: blob: https:; font-src 'self' https://fonts.gstatic.com data:; connect-src 'self' https: https://*.sentry.io; frame-src 'self' https://www.youtube.com https://www.youtube-nocookie.com; frame-ancestors 'self';",
+            value: "default-src 'none'; script-src 'self' 'unsafe-eval' 'unsafe-inline' https://www.googletagmanager.com https://*.sentry.io https://assets.pinterest.com; worker-src 'self' blob:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data: blob: https:; font-src 'self' https://fonts.gstatic.com data:; connect-src 'self' https: https://*.sentry.io; frame-src 'self' https://www.youtube.com https://www.youtube-nocookie.com; frame-ancestors 'self'; manifest-src 'self'; media-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self';",
           },
         ],
       },
@@ -63,4 +63,5 @@ export default withSentryConfig(nextConfig, {
   project: process.env.SENTRY_PROJECT || "meenakshi-art-work",
   silent: true,
   widenClientFileUpload: true,
+  tunnelRoute: "/monitoring",
 });

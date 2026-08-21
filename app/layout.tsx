@@ -5,9 +5,6 @@ import "./globals.css";
 import "./styles/primitives.css";
 import "./styles/layout.css";
 import "./styles/home.css";
-import "./styles/exhibition.css";
-import "./styles/artist.css";
-import "./styles/journal.css";
 import "./styles/audio.css";
 import "./styles/base-motion.css";
 import "./styles/academy.css";
@@ -77,6 +74,7 @@ const schemaOrgJsonLd = {
     streetAddress: "H.no.11/280B, Bansal Wali Gali, Pratap Nagar, near Raiwala Market",
     addressLocality: "Saharanpur",
     addressRegion: "Uttar Pradesh",
+    postalCode: "247001",
     addressCountry: "IN",
   },
   openingHoursSpecification: [
@@ -95,10 +93,21 @@ const schemaOrgJsonLd = {
 
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000"),
-  title: { default: "Meenakshi Oil Painting | Art Academy & Paintings in Saharanpur", template: "%s | Meenakshi Art Work" },
+  title: { default: "Meenakshi Oil Painting | Art Academy in Saharanpur", template: "%s | Meenakshi Art Work" },
   description: "Women-only fine art academy, original paintings and custom art commissions in Saharanpur since 2017.",
   keywords: ["oil painting Saharanpur", "art classes for girls Saharanpur", "custom painting", "Meenakshi Art Work"],
-  openGraph: { title: "Meenakshi Oil Painting", description: "Where Passion Becomes Art 🎨", type: "website", locale: "en_IN" }
+  openGraph: {
+    title: "Meenakshi Oil Painting",
+    description: "Women-only fine art academy, original paintings and custom art commissions in Saharanpur since 2017.",
+    siteName: "Meenakshi Art Work",
+    type: "website",
+    locale: "en_IN",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Meenakshi Oil Painting",
+    description: "Women-only fine art academy, original paintings and custom art commissions in Saharanpur since 2017.",
+  },
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
@@ -107,14 +116,6 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
   return (
     <html lang="en" data-season={currentSeason}>
       <head>
-        {/* Warm up DNS/TLS handshakes for the cross-origin endpoints this app
-            talks to so the first real request isn't blocked on connect latency. */}
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link rel="preconnect" href="https://*.sentry.io" crossOrigin="anonymous" />
-        <link rel="preconnect" href="https://va.vercel-scripts.com" crossOrigin="anonymous" />
-        <link rel="preconnect" href="https://api.cloudinary.com" crossOrigin="anonymous" />
-        <link rel="preconnect" href="https://*.vercel-blob.com" crossOrigin="anonymous" />
         <link rel="dns-prefetch" href="https://assets.pinterest.com" />
         <link rel="manifest" href="/manifest.webmanifest" />
         <script

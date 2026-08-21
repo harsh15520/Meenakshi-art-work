@@ -3,7 +3,7 @@ import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import { trackNavigationClick } from "@/lib/analytics";
 
-const links = [["Home", "/"], ["Art Academy", "/academy"], ["Gallery", "/gallery"], ["Custom Orders", "/custom-orders"], ["Studio Journal", "/journal"], ["Contact", "/contact"]];
+const links = [["Art Academy", "/academy"], ["Gallery", "/gallery"], ["Custom Orders", "/custom-orders"], ["Studio Journal", "/journal"], ["Contact", "/contact"]];
 
 const handleNavClick = (label: string, href: string) => {
   trackNavigationClick(label, href);

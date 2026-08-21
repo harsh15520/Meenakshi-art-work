@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-:root{--ink:#292321;--wine:#583a35;--gold:#b6783e;--ivory:#f8f2e9;--paper:#fffdf9;--blush:#eadbd0;--line:rgba(41,35,33,.16);--season-accent:var(--gold);--season-tint:transparent;--season-border:var(--line)}
+:root{--ink:#292321;--wine:#583a35;--gold:#b6783e;--gold-text:#7f5029;--ivory:#f8f2e9;--paper:#fffdf9;--blush:#eadbd0;--line:rgba(41,35,33,.16);--season-accent:var(--gold);--season-tint:transparent;--season-border:var(--line)}
 
 /* --font-hand-raw/--font-serif-narrative-raw only exist on <body> (set by next/font's
    variable classes there), so the --font-hand/--font-signature alias must be declared
