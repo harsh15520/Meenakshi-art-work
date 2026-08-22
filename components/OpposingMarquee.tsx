@@ -15,7 +15,7 @@ function MarqueeCard({ image }: { image: CarouselImage }) {
   const inner = (
     <>
       <div className="opposing-marquee__image">
-        <Image src={image.src} alt={image.alt} fill sizes="240px" loading="eager" style={{ objectFit: "cover" }} />
+        <Image src={image.src} alt={image.alt} fill sizes="(max-width: 620px) 160px, (max-width: 1023px) 200px, 240px" loading="eager" style={{ objectFit: "cover" }} />
         {image.curatorsChoice && (
           <span className="opposing-marquee__ribbon" title={image.curatorReason}>
             <span className="opposing-marquee__ribbon-stars">★★★★★</span>

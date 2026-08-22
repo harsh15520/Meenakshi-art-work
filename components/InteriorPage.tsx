@@ -103,7 +103,7 @@ export default function InteriorPage({
           </div>
         </div>
         <div className="interior-image">
-          <Image src={image} alt="" aria-hidden="true" fill className="interior-image-bg" sizes="100vw" placeholder="blur" blurDataURL={HERO_BLUR} />
+          <Image src={image} alt="" aria-hidden="true" fill className="interior-image-bg" sizes="100vw" priority placeholder="blur" blurDataURL={HERO_BLUR} />
           <Image src={image} alt={`${title} image`} fill className="interior-image-fg" sizes="(min-width: 980px) 52vw, 100vw" placeholder="blur" blurDataURL={HERO_BLUR} />
           <div className="interior-shine"></div>
           <div className="interior-image-overlay" aria-hidden="true"></div>
